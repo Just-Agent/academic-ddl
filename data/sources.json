@@ -14,10 +14,17 @@
     "parser": "generic-link-date"
   },
   {
-    "id": "competehub",
-    "name": "CompeteHub",
-    "url": "https://www.competehub.dev/zh",
-    "priority": "competition-aggregator",
+    "id": "openreview",
+    "name": "OpenReview",
+    "url": "https://openreview.net/",
+    "priority": "academic-review",
+    "parser": "generic-link-date"
+  },
+  {
+    "id": "nsf",
+    "name": "NSF Funding",
+    "url": "https://www.nsf.gov/funding",
+    "priority": "grant-source",
     "parser": "generic-link-date"
   }
 ]
