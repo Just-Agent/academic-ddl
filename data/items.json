@@ -1,0 +1,74 @@
+[
+  {
+    "id": "academic-ddl-1",
+    "title": "NeurIPS 2026 Full Paper",
+    "deadline": "2026-05-28T23:59:59",
+    "dateRange": "2026-05-28",
+    "location": "Online",
+    "isOnline": true,
+    "tags": [
+      "ML",
+      "AI"
+    ],
+    "url": "https://neurips.cc",
+    "status": "upcoming",
+    "stage": "Paper",
+    "source": "AllConfs-style seed",
+    "type": "conference",
+    "description": "机器学习顶会 demo。"
+  },
+  {
+    "id": "academic-ddl-2",
+    "title": "ICLR 2027 Submission",
+    "deadline": "2026-10-01T23:59:59",
+    "dateRange": "2026-10-01",
+    "location": "Online",
+    "isOnline": true,
+    "tags": [
+      "Representation",
+      "OpenReview"
+    ],
+    "url": "https://iclr.cc",
+    "status": "upcoming",
+    "stage": "OpenReview",
+    "source": "OpenReview-style seed",
+    "type": "conference",
+    "description": "ICLR 投稿 demo。"
+  },
+  {
+    "id": "academic-ddl-3",
+    "title": "KDD 2027 Research Track",
+    "deadline": "2027-02-04T23:59:59",
+    "dateRange": "2027-02-04",
+    "location": "Online",
+    "isOnline": true,
+    "tags": [
+      "Data Mining",
+      "KDD"
+    ],
+    "url": "https://kdd.org",
+    "status": "upcoming",
+    "stage": "Research",
+    "source": "Demo seed",
+    "type": "conference",
+    "description": "数据挖掘会议 demo。"
+  },
+  {
+    "id": "academic-ddl-4",
+    "title": "Global AI Summer School Application",
+    "deadline": "2026-06-30T23:59:59",
+    "dateRange": "2026-06-30",
+    "location": "Hybrid",
+    "isOnline": true,
+    "tags": [
+      "Summer School",
+      "AI"
+    ],
+    "url": "https://www.allconfs.org",
+    "status": "upcoming",
+    "stage": "Application",
+    "source": "AllConfs-style seed",
+    "type": "program",
+    "description": "科研项目/暑校申请 demo。"
+  }
+]

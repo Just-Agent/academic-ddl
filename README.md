@@ -2,47 +2,41 @@
 
 # Academic-DDL
 
-跨学科学术会议、期刊专刊、基金申请与科研项目截止日追踪。
+跨学科学术会议、基金申请、暑校与科研项目截止日追踪。
 
 [![GitHub Pages](https://img.shields.io/badge/Pages-live-F43F5E?style=for-the-badge)](https://just-agent.github.io/academic-ddl/)
+[![Data Check](https://img.shields.io/badge/Data-checks-059669?style=for-the-badge)](https://github.com/Just-Agent/academic-ddl/actions)
 [![Just-DDL](https://img.shields.io/badge/Just--DDL-network-101626?style=for-the-badge)](https://just-agent.github.io/just-ddl/)
-[![Status](https://img.shields.io/badge/Demo-completed-059669?style=for-the-badge)](https://just-agent.github.io/academic-ddl/)
 
 [专题页面](https://just-agent.github.io/academic-ddl/) · [Just-DDL Hub](https://just-agent.github.io/just-ddl/#/topic/academic-ddl) · [GitHub 仓库](https://github.com/Just-Agent/academic-ddl)
 
 </div>
 
-## Demo 已完善
+## Production Data Flow
 
-这个仓库不再只是空 Pages 骨架。当前已经包含完整 demo DDL 列表、搜索筛选、状态统计、来源说明和统一 Just-DDL Network 导航。数据风格参考 AllConfs 的会议列表结构，以及 SinoConf 的国内会议/预告/回顾入口。
+本仓库已从内置 demo 数据升级为数据优先结构：
 
-## Demo DDL Seed
+| 文件 | 作用 |
+| --- | --- |
+| `data/items.json` | DDL 条目数据，页面直接读取 |
+| `data/sources.json` | crawler seed 来源清单 |
+| `scripts/validate-data.mjs` | 校验必填字段、日期、状态、URL |
+| `scripts/link-check.mjs` | 检查来源链接可访问性，默认 warning-only |
+| `scripts/crawl-sources.mjs` | 输出 crawler seed plan，后续接具体解析器 |
+| `.github/workflows/data-check.yml` | 数据变更、PR、定时任务自动校验 |
 
-| DDL | 阶段 | 截止日 | 地点 | 来源类型 |
-| --- | --- | --- | --- | --- |
-| NeurIPS 2026 Full Paper | Paper | 2026-05-28 | Online | AllConfs-style seed |
-| ICML 2027 Abstract | Abstract | 2027-01-23 | Online | Demo seed |
-| ICLR 2027 Submission | OpenReview | 2026-10-01 | Online | OpenReview-style seed |
-| AAAI 2027 Abstract | Abstract | 2026-08-12 | Online | Demo seed |
-| KDD 2027 Research Track | Research | 2027-02-04 | Online | Demo seed |
-| SIGIR 2027 Full Paper | Paper | 2027-01-30 | Online | Demo seed |
-| CHI 2027 Papers | Paper | 2026-09-18 | Online | Demo seed |
-| Global AI Summer School Application | Application | 2026-06-30 | Hybrid | AllConfs-style seed |
+## 下一步
 
-## 后续生产化
-
-| 模块 | 当前 | 下一步 |
-| --- | --- | --- |
-| 页面 | 完整 demo 页面已上线 | 替换为真实数据源输出 |
-| 数据 | seed 数据在 index.html 内置 | 拆出 JSON/YAML schema |
-| Actions | Pages 自动部署 | 增加 crawler、validator、link-check |
-| Hub 联动 | 已接入 Just-DDL Hub | 加入更新时间和数据健康状态 |
-| 小程序 | 结构已预留 | 复用同一 schema 输出小程序专题页 |
+- 为每个 source 编写 parser module
+- crawler 输出标准 `data/items.json`
+- 增加 `verified_at`、`source_priority`、`deadline_timezone`
+- 在 Just-DDL Hub 展示更新时间与数据健康状态
 
 ## References
 
 - AllConfs: https://www.allconfs.org/
 - SinoConf: https://sinoconf.napstic.cn/index
+- CompeteHub: https://www.competehub.dev/zh
 
 ## License
 
